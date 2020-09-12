@@ -1,0 +1,20 @@
+---
+version: '3'
+services:
+    # Built from Dockerfile
+    web:
+        # Build Dockerfile from this directory
+        build: .
+        # Mount this directory as a volume at /app
+        volumes:
+            - '.:/app'
+        # Make all commands run in the app directory
+        working_dir: /app
+        # The procss running in this container (containers only run 1 process)
+        command: 'node app/server.js'
+        # Set environment variables
+        environment:
+            PORT: 8080
+        # Map host port to docker port
+        ports:
+            - '8080:8080'

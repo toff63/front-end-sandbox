@@ -60,3 +60,4 @@ repl-temp-*
 
 # End of https://www.gitignore.io/api/elm,scala,clojure,angular
 
+**/.history
